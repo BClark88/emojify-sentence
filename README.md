@@ -17,8 +17,8 @@ tightly coupled to the author's environment
 Rust
 
 ## Setup
-`git clone`
-`cargo install`
+`git clone`\
+`cargo install`\
 `cargo test`
 
 Assuming this all works then you can build the package using `cargo build`
