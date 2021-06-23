@@ -30,8 +30,8 @@ emoji-alphabet "foo bar"
 ```
 
 ## Todo
-* Allow args to be passed in specifying output (e.g. `emoji-alphabet --sentence  "foo" --prefix "bar" --options "baz" "quux"` should'
-output something like ":bar-baz-f::bar-baz-o::bar-quux-o`)
+* Allow args to be passed in specifying output (e.g. `emoji-alphabet --sentence  "foo" --prefix "bar" --options "baz" "quux"` should
+output something like `:bar-baz-f::bar-baz-o::bar-quux-o`)
 To that end the following needs to happen:
 * Implement argument parser
 * Allow "emoji prefix" (`alphabet` in the above example) to be set
