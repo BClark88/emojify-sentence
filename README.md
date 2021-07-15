@@ -1,7 +1,8 @@
-# Emoji Alphabet
+# Emojify Sentence
 ## Purpose
 The purpose of this project is to allow people to quickly and easily read in a sentence of alphanumeric ascii
-characters and output something that can be copied and pasted into slack and produce an arbitrary set of emojis
+characters and output something that can be copied and pasted into an environment
+that allows for custom emoji and produce an arbitrary set of emojis.
 
 ## Why Rust?
 Speed was a concern (see quickly) so I needed something that was web-scale that can also be built
@@ -12,8 +13,8 @@ Rust meets those two criteria. It's also a fun learning experience
 Rust
 
 ## Setup
-`git clone`
-`cargo install`
+`git clone`\
+`cargo install`\
 `cargo test`
 
 Assuming this all works then you can build the package using `cargo build`
