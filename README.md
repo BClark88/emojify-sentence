@@ -32,5 +32,4 @@ see `emojify-sentence --help` for more info
 output something like ":bar-baz-f::bar-baz-o::bar-quux-o`)
 To that end the following needs to happen:
 * Allow "emoji prefix" (`alphabet` in the above example) to be set
-* Allow "emoji modifier" (`yellow/white` in the above example) to be set
 * Anything else that improves the emojification experience
