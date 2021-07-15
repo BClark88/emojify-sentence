@@ -4,7 +4,7 @@ pub struct EmojifiedSentence {
     pub sentence: String,
 }
 
-pub fn sentence_to_emoji(sentence: String, colour_options: Vec<&str>) -> EmojifiedSentence {
+pub fn sentence_to_emoji(sentence: String, colour_options: Vec<String>) -> EmojifiedSentence {
     let mut emojified_sentence: String = "".to_string();
     sentence.chars().for_each(|character| match character {
         character if character.is_ascii_alphanumeric() => {
@@ -18,7 +18,7 @@ pub fn sentence_to_emoji(sentence: String, colour_options: Vec<&str>) -> Emojifi
     };
 }
 
-fn emojified_alpha(character: char, colour_options: Vec<&str>) -> String {
+fn emojified_alpha(character: char, colour_options: Vec<String>) -> String {
     let random_colour = colour_options.choose(&mut rand::thread_rng()).unwrap();
     return format!(":alphabet-{}-{}:", random_colour, character);
 }
@@ -31,9 +31,9 @@ mod tests {
     #[test]
     fn test_sentence_to_emoji() {
         let re = Regex::new(r"^:alphabet-(yellow|white)-a:$").unwrap();
-        let colours = vec!["yellow", "white"];
+        let colours = vec![String::from("yellow"), String::from("white")];
         let input = "a".to_owned();
-        let output = sentence_to_emoji(input, colours).sentence;
+        let output = String::from(sentence_to_emoji(input, colours).sentence);
         assert!(re.is_match(&output));
     }
 
@@ -42,18 +42,18 @@ mod tests {
         // an a, eight spaces and another a
         let re =
             Regex::new(r"^:alphabet-(yellow|white)-a:\s{8}:alphabet-(yellow|white)-a:$").unwrap();
-        let colours = vec!["yellow", "white"];
+        let colours = vec![String::from("yellow"), String::from("white")];
         let input = "a a".to_owned();
-        let output = sentence_to_emoji(input, colours).sentence;
+        let output = String::from(sentence_to_emoji(input, colours).sentence);
         assert!(re.is_match(&output), "{}", output);
     }
 
     #[test]
     fn test_ignores_non_ascii() {
         let re = Regex::new(r"^:alphabet-(yellow|white)-n:$").unwrap();
-        let colours = vec!["yellow", "white"];
+        let colours = vec![String::from("yellow"), String::from("white")];
         let input = "nñ".to_owned();
-        let output = sentence_to_emoji(input, colours).sentence;
+        let output = String::from(sentence_to_emoji(input, colours).sentence);
         assert!(re.is_match(&output));
     }
 }

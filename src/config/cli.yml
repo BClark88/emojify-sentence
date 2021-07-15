@@ -1,0 +1,18 @@
+name: emojify-sentence
+version: "0.42"
+about: Output a sentence as Slack emoji codes
+args:
+    - sentence:
+        short: s
+        long: sentence
+        value_name: sentence
+        help: The text that you want to be emojified
+        required: true
+        takes_value: true
+    - modifiers:
+        short: m
+        long: modifier
+        multiple: true
+        takes_value: true
+        help: Words that can be used to modify your emoji
+        default_value: yellow
